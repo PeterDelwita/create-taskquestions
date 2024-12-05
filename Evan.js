@@ -3,9 +3,9 @@ import "../css/style.css";
 
 const ToDoItems = [];
 
-function addToDo(event) {
+function addToDo(event) { // Adds inputs to a to-do list
   DOMSelectors.toDoList.innerHTML = "";
-  const inputtedToDo = DOMSelectors.userInput.value;
+  const inputtedToDo = DOMSelectors.userInput.value; // DOMSelectors.userInput.value is a valid input because this info is being submitted to a form; it is set to the variable inputtedToDo, which is pushed to the list ToDoItems, which is displayed just before the input value is cleared. In particular, the info is displayed with a function that uses an array to create cards of each to-do based on each input.
   event.preventDefault();
   ToDoItems.push(inputtedToDo);
   displayToDoList(ToDoItems);

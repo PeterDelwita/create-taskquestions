@@ -3,6 +3,7 @@
 ## AP® Computer Science Principles Written Response Prompts
 
 ### Instructions:
+
 - **Time:** 1 hour
 - **Questions:** 2
 - Read each question carefully and completely.
@@ -10,18 +11,59 @@
 - You may plan your answers in this orange booklet, but no credit will be given for anything written in this booklet. You will only earn credit for what you write in the separate Written Response booklet.
 
 ---
+
 ### Pre-FRQ Practice
 
-## Identify the Algorithm present in the JavaScript Files. 
+--Butter's Code--
+
+--Evan's Code--
+function displayToDoList(array) {
+array.forEach((inputs) => {
+DOMSelectors.toDoList.insertAdjacentHTML(
+"beforeend",
+`<div class="card"><div class = "to-do-card">${inputs}</div>
+    <button type ="submit" class="remove-button" id="remove-reminder"> Remove </button>
+    </div>`
+);
+});
+const removeButton = document.querySelectorAll(".remove-button");
+removeButton.forEach((button) => {
+button.addEventListener("click", removeToDo);
+});
+
+function removeToDo() {
+const specificCard = this.parentElement;
+const specificCardText =
+specificCard.querySelector(".to-do-card").textContent;
+
+    for (let i = 0; i < ToDoItems.length; i++) {
+      if (ToDoItems[i] === specificCardText) {
+        ToDoItems.splice(i, 1);
+        break;
+      }
+    }
+    specificCard.remove();
+
+}
+}
+
+## Identify the Algorithm present in the JavaScript Files.
+
 ### Aspects of Algorithm
+
 Sequencing
-Selection 
+Selection
 Iteration
 
-
-
 ### Question 1
+
 Programs accept input to achieve their intended functionality. **Describe at least one valid input to your program and what your program does with that input.**
+
+-- Butter's File --
+DOMSelectors.userAge is a valid input and is inputted into a form that generates a quote based on the user's age (young or old) and feelings, such as happiness. In particular, DOMSelectors.userAge is used to set up the variable valueUserAge in the form's event listener and is then used to log a different quote depending on whether the user is young or old, which is denoted by valueUserAge.
+
+-- Evan's File --
+DOMSelectors.userInput.value is a valid input because this info is being submitted to a form; it is set to the variable inputtedToDo, which is pushed to the list ToDoItems, which is displayed just before the input value is cleared. In particular, the info is displayed with a function that uses an array to create cards of each to-do based on each input.
 
 - Write your responses to this question only on the designated pages in the separate Written Response booklet.
 - If there are multiple parts to this question, write the part letter with your response.
@@ -29,18 +71,24 @@ Programs accept input to achieve their intended functionality. **Describe at lea
 ---
 
 ### Question 2
+
 Refer to your Personalized Project Reference when answering this question.
 
 #### Part (a):
+
 Consider the first iteration statement included in the Procedure section of your Personalized Project Reference. **Describe what is being accomplished by the code in the body of the iteration statement.**
 
 #### Part (b):
+
 Consider the procedure identified in part (i) of the Procedure section of your Personalized Project Reference.
+
 - Write two calls to your procedure that each cause a different code segment in the procedure to execute.
 - Describe the expected behavior of each call. If it is not possible for two calls to your procedure to cause different code segments to execute, explain why this is the case for your procedure.
 
 #### Part (c):
+
 Suppose another programmer provides you with a procedure called `checkValidity(value)` that:
+
 - Returns `true` if a value passed as an argument is considered valid by the other programmer.
 - Returns `false` otherwise.
 
@@ -52,4 +100,3 @@ Using the list identified in the List section of your Personalized Project Refer
 ---
 
 ### End of Exam
-
