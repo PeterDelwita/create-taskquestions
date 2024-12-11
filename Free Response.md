@@ -102,14 +102,11 @@ Consider the procedure identified in part (i) of the Procedure section of your P
 
 - Write two calls to your procedure that each cause a different code segment in the procedure to execute.
   -- Butter --
-
-  displayHistory()
-  retrieveFeelingQuote()
-
-  displayHistory() will create quote cards, while retrieveFeelingQuote() will take a quote from the API based on the category inputted.
+  retrieveFeelingQuote(happiness) - Creates quote cards that have happiness defines as their category.
+  retrieveFeelingQuote(fhfuewi) - Generates an error message because fhfuewi is not defined as a category, so cards cannot be made.
 
   -- Evan --
-  removeToDo() removes items from the to-do list, while displayToDoList() makes cards and adds a remove button,with the removeToDo function inside so that the button works.
+  removeToDo() does not accept any arguments, making it impossible to make two calls executing two different parts of the code.
 
 - Describe the expected behavior of each call. If it is not possible for two calls to your procedure to cause different code segments to execute, explain why this is the case for your procedure.
 
@@ -121,7 +118,10 @@ Suppose another programmer provides you with a procedure called `checkValidity(v
 - Returns `false` otherwise.
 
 --Butter--
-The elements in the quoteCurrent list are valid because the function adding quotes
+Iterate through the QuoteCurrent list using the filter and forEach array method and quoteCurrent[i] and for each of them, run createQuoteCard. In the filter array, if a quote is found not to have a quote, author, or category, the function should return false. Otherwise, it should return true.
+
+--Evan--
+Iterate through the toDoItems list and use the filter and forEach array methods. The filter method should filter out any values that are not strings or have less than one character, while the forEach option should be used to call addToDo. If the filter method detects any non-strings or blank values, it should return false. Otherwise, it should return true.
 
 Using the list identified in the List section of your Personalized Project Reference, **explain in detailed steps an algorithm that uses `checkValidity` to check whether all elements in your list are considered valid by the other programmer.** Your explanation must be detailed enough for someone else to write the program code for the algorithm that uses `checkValidity`.
 
